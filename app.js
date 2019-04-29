@@ -17,9 +17,9 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, authorization,Accept,x-access-token");
     next();
 });
-app.listen(8200,function(){
-   console.log("running on port 8200");
-   
-});
+var port=process.env.PORT || (5000);
+
+app.listen(port, () => console.log(`Running on localhost:5000`));
+
 
 app.use('/ecg',ecgRouter);
